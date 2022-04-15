@@ -18,15 +18,10 @@ ListNode* create_linked_list(std::vector<int> values) {
 }
 
 ListNode* partition(ListNode* A, int B) {
-    // if (A->next == NULL) {
-    //     return A;
-    // }
-
     ListNode* less_ptr = NULL;
     ListNode* greater_ptr = NULL;
     ListNode* less_head = NULL;
     ListNode* greater_head = NULL;
-    int i = 0;
     while (A != NULL) {
         auto new_node = new ListNode(A->val);
         if (new_node->val < B) {
@@ -50,10 +45,6 @@ ListNode* partition(ListNode* A, int B) {
             }
         }
         A = A->next;
-        i++;
-        if (i == 10) {
-            break;
-        }
     }
 
     if (less_head == NULL) {
